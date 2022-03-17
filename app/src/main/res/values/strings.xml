@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Task2</string>
+    <string name="top_image">Top Image</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <!-- Category name for phrases [CHAR LIMIT=20] -->
+    <string name="category_first">First</string>
+
+    <!-- Category name for the vocabulary words for colors [CHAR LIMIT=20] -->
+    <string name="category_second">Second</string>
+
+    <!-- Category name for the vocabulary words for numbers [CHAR LIMIT=20] -->
+    <string name="category_third">Third</string>
+    <string name="cardImage">cardImage</string>
+    <string name="api_key">aeb8da21db0e425c928bbcaff4341209</string>
+    <string name="open_in_browser">Open in Browser</string>
+    <string name="enter_your_name">Enter Your Name</string>
+    <string name="enter_your_email">Enter Your Email</string>
+    <string name="save">save</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+</resources>
