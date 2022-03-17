@@ -1,4 +1,4 @@
-package com.example.task2;
+package com.example.task2.ui.view.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -7,7 +7,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.example.task2.Models.NewHeadLines;
+import com.example.task2.data.models.NewHeadLines;
+import com.example.task2.R;
 import com.squareup.picasso.Picasso;
 import java.util.List;
 

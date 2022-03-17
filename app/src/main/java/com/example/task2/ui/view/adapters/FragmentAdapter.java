@@ -1,4 +1,4 @@
-package com.example.task2.Adapters;
+package com.example.task2.ui.view.adapters;
 
 import android.content.Context;
 
@@ -8,9 +8,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.task2.Fragments.FirstFrag;
-import com.example.task2.Fragments.SecondFragment;
-import com.example.task2.Fragments.ThirdFragment;
+import com.example.task2.ui.view.fragments.FirstFrag;
+import com.example.task2.ui.view.fragments.SecondFragment;
+import com.example.task2.ui.view.fragments.ThirdFragment;
 
 
 public class FragmentAdapter extends FragmentStateAdapter {

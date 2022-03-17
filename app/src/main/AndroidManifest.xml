@@ -12,14 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Task2">
         <activity
-            android:name=".SaveActivity"
+            android:name=".ui.view.activities.SaveActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailsActivity"
+            android:name=".ui.view.activities.DetailsActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.view.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

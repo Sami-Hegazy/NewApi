@@ -1,4 +1,4 @@
-package com.example.task2;
+package com.example.task2.ui.view.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.task2.R;
 
 public class SaveActivity extends AppCompatActivity {
 

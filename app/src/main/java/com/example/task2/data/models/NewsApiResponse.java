@@ -1,9 +1,8 @@
-package com.example.task2.Models;
+package com.example.task2.data.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import java.io.Serializable;
 import java.util.List;
 
 public class NewsApiResponse implements Parcelable {

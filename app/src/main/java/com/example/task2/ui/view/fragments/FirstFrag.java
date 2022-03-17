@@ -1,8 +1,10 @@
-package com.example.task2.Fragments;
+package com.example.task2.ui.view.fragments;
 
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,18 +12,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.task2.Adapters.RecycleInfAdapter;
-import com.example.task2.Models.NewHeadLines;
-import com.example.task2.Utilities.OnFetchDataListener;
+import com.example.task2.ui.view.adapters.RecycleInfAdapter;
+import com.example.task2.data.models.NewHeadLines;
 import com.example.task2.R;
-import com.example.task2.Utilities.RequestManager;
+import com.example.task2.ui.viewModels.NewsViewModel;
 
 import java.util.List;
 
-public class FirstFrag extends Fragment implements RecycleInfAdapter.ListItemClickListener {
+public class FirstFrag extends Fragment{
 
    // List<NewHeadLines> list;
     RecyclerView recyclerView;
+    NewsViewModel newsViewModel;
+
 
     public FirstFrag() {
         // Required empty public constructor
@@ -38,32 +41,22 @@ public class FirstFrag extends Fragment implements RecycleInfAdapter.ListItemCli
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_first, container, false);
 
-        RequestManager requestManager = new RequestManager(getContext());
-        requestManager.getNewsHeadLines(listener);
+        newsViewModel = new ViewModelProvider(this).get(NewsViewModel.class);
+        newsViewModel.getPosts();
+
 
         recyclerView = view.findViewById(R.id.recycler_view);
+        RecycleInfAdapter recycleAdapter = new RecycleInfAdapter(getContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(recycleAdapter);
+
+        newsViewModel.listPostMutableLiveData.observe(getActivity(), new Observer<List<NewHeadLines>>() {
+            @Override
+            public void onChanged(List<NewHeadLines> headLines) {
+                recycleAdapter.setList(headLines);
+            }
+        });
 
         return view;
-    }
-
-
-    private final OnFetchDataListener listener = new OnFetchDataListener() {
-        @Override
-        public void onFetchData(List<NewHeadLines> list, String message) {
-            RecycleInfAdapter recycleAdapter = new RecycleInfAdapter(getContext(),headLines -> {} , list );
-            recyclerView.setAdapter(recycleAdapter);
-        }
-
-        @Override
-        public void onError(String message) {
-
-        }
-    };
-
-
-    @Override
-    public void OnListItemClickListener(NewHeadLines headLines) {
-
     }
 }

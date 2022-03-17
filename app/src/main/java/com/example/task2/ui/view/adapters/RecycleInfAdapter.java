@@ -1,4 +1,4 @@
-package com.example.task2.Adapters;
+package com.example.task2.ui.view.adapters;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,8 +12,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.task2.DetailsActivity;
-import com.example.task2.Models.NewHeadLines;
+import com.example.task2.ui.view.activities.DetailsActivity;
+import com.example.task2.data.models.NewHeadLines;
 import com.example.task2.R;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
@@ -21,24 +21,11 @@ import java.util.List;
 
 public class RecycleInfAdapter extends RecyclerView.Adapter<RecycleInfAdapter.ViewHolder> {
 
-    List<NewHeadLines> headLines;
-
-    private static ListItemClickListener mOnClickListener;
+    List<NewHeadLines> headLines = new ArrayList<>();
     Context ctx;
 
-
-//    public interface ListItemClickListener{
-//        void OnListItemClickListener(int clickItemIndex);
-//    }
-
-    public interface ListItemClickListener{
-        void OnListItemClickListener(NewHeadLines headLines);
-    }
-
-    public RecycleInfAdapter(Context context, ListItemClickListener listener ,List<NewHeadLines> headLines ) {
-        ctx = context;
-        mOnClickListener = listener;
-        this.headLines = headLines;
+    public RecycleInfAdapter(Context ctx) {
+        this.ctx = ctx;
     }
 
     @NonNull
@@ -63,8 +50,13 @@ public class RecycleInfAdapter extends RecyclerView.Adapter<RecycleInfAdapter.Vi
             intent.putExtra("position",position);
             ctx.startActivity(intent);
 
-            mOnClickListener.OnListItemClickListener(headLines.get(position));
         });
+    }
+
+
+    public void setList(List<NewHeadLines> newsModelsList) {
+        this.headLines = newsModelsList;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -80,13 +72,6 @@ public class RecycleInfAdapter extends RecyclerView.Adapter<RecycleInfAdapter.Vi
             firstCardText = itemView.findViewById(R.id.first_card_text);
             secondCardText = itemView.findViewById(R.id.second_card_text);
             cardImage = itemView.findViewById(R.id.card_image);
-//            itemView.setOnClickListener(this);
         }
-//
-//        @Override
-//        public void onClick(View view) {
-//            int clickedPosition = getBindingAdapterPosition();
-//            mOnClickListener.OnListItemClickListener(clickedPosition);
-//        }
     }
 }
