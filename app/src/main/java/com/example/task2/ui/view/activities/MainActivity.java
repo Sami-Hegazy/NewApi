@@ -15,7 +15,6 @@ import com.example.task2.ui.viewModels.NewsViewModel;
 import com.example.task2.utilities.MockUps;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
@@ -26,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     private TopViewPagerAdapter topViewPagerAdapter;
     private final Handler handler = new Handler();
     private ViewPager2 topViewPager;
-    private List<NewHeadLines> imageList = new ArrayList<>();
     private int currentPage = 0;
     private Timer timer = new Timer(); ;
     private final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
@@ -70,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         /*After setting the adapter use the timer */
         final Runnable Update = () -> {
-            if (currentPage == imageList.size()) {
+            if (currentPage == topViewPagerAdapter.getItemCount()) {
                 currentPage = 0;
             }
             topViewPager.setCurrentItem(currentPage++, true);

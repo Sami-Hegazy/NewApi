@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class FetchNews {
     private static final String BASE_URL = "https://newsapi.org/v2/";
-    private ApiInterFace apiInterface;
+    private final ApiInterFace apiInterface;
     private static FetchNews INSTANCE;
 
     public FetchNews() {
@@ -24,10 +24,6 @@ public class FetchNews {
         }
         return INSTANCE;
     }
-
-//    public Call<NewsApiResponse> getPosts(){
-//        return apiInterface.getPost();
-//    }
 
     public Call<NewsApiResponse> getPostsByCat(String cat){
         return apiInterface.getPostByCategory(cat);
