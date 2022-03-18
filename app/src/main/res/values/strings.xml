@@ -6,13 +6,13 @@
 
 
     <!-- Category name for phrases [CHAR LIMIT=20] -->
-    <string name="category_first">First</string>
+    <string name="category_first">Sports</string>
 
     <!-- Category name for the vocabulary words for colors [CHAR LIMIT=20] -->
-    <string name="category_second">Second</string>
+    <string name="category_second">Science</string>
 
     <!-- Category name for the vocabulary words for numbers [CHAR LIMIT=20] -->
-    <string name="category_third">Third</string>
+    <string name="category_third">Health</string>
     <string name="cardImage">cardImage</string>
     <string name="api_key">aeb8da21db0e425c928bbcaff4341209</string>
     <string name="open_in_browser">Open in Browser</string>
@@ -21,4 +21,8 @@
     <string name="save">save</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
+    <string name="new_app">News App</string>
+    <string name="category">Category</string>
+    <string name="news_image">News Image</string>
+    <string name="main_card_image">Main Card Image</string>
 </resources>

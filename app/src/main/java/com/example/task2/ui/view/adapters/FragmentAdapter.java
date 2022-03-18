@@ -18,8 +18,6 @@ public class FragmentAdapter extends FragmentStateAdapter {
 
     private final Context mContext;
 
-
-
     public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle, Context mContext) {
         super(fragmentManager, lifecycle);
         this.mContext = mContext;

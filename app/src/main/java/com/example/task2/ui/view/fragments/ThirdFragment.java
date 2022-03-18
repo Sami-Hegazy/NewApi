@@ -35,10 +35,10 @@ public class ThirdFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_first, container, false);
+        View view = inflater.inflate(R.layout.fragment, container, false);
 
         NewsViewModel newsViewModel = new ViewModelProvider(getActivity()).get(NewsViewModel.class);
-        newsViewModel.getPosts();
+        newsViewModel.getPostsByCat("business");
 
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         RecycleInfAdapter recycleAdapter = new RecycleInfAdapter(getContext());

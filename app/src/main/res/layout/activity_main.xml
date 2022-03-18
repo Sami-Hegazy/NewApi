@@ -4,41 +4,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="vertical">
+    tools:context=".ui.view.activities.MainActivity"
+    android:orientation="vertical"
+    android:background="@color/black_shade_1">
 
-    <FrameLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:padding="4dp"
+                android:text="@string/new_app"
+                android:textAlignment="center"
+                android:textColor="@color/yellow"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:orientation="vertical">
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/intro_pager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layoutDirection="rtl"
-            android:layout_marginBottom="16dp" />
+            android:layout_height="150dp"
+            android:layoutDirection="rtl" />
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/dot_tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            app:tabBackground="@drawable/tab_selector"
-            android:background="#00FFFFFF"
-            app:tabGravity="center"
-            app:tabIndicatorHeight="0dp" />
-    </FrameLayout>
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/dot_tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="#00FFFFFF"
+                app:tabBackground="@drawable/tab_selector"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+    </LinearLayout>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/main_tab_layout"
-        android:layout_marginTop="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#00FFFFFF"
+        tools:ignore="SpeakableTextPresentCheck"
+        app:tabIndicatorColor="@color/yellow"
+        app:tabSelectedTextColor="@color/yellow" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/main_view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

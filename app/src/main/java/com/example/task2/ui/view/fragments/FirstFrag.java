@@ -12,8 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.task2.ui.view.adapters.RecycleInfAdapter;
 import com.example.task2.data.models.NewHeadLines;
+import com.example.task2.ui.view.adapters.RecycleInfAdapter;
 import com.example.task2.R;
 import com.example.task2.ui.viewModels.NewsViewModel;
 
@@ -21,7 +21,6 @@ import java.util.List;
 
 public class FirstFrag extends Fragment{
 
-   // List<NewHeadLines> list;
     RecyclerView recyclerView;
     NewsViewModel newsViewModel;
 
@@ -39,10 +38,10 @@ public class FirstFrag extends Fragment{
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_first, container, false);
+        View view = inflater.inflate(R.layout.fragment, container, false);
 
         newsViewModel = new ViewModelProvider(this).get(NewsViewModel.class);
-        newsViewModel.getPosts();
+        newsViewModel.getPostsByCat("sports");
 
 
         recyclerView = view.findViewById(R.id.recycler_view);
@@ -50,12 +49,13 @@ public class FirstFrag extends Fragment{
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(recycleAdapter);
 
-        newsViewModel.listPostMutableLiveData.observe(getActivity(), new Observer<List<NewHeadLines>>() {
-            @Override
-            public void onChanged(List<NewHeadLines> headLines) {
-                recycleAdapter.setList(headLines);
-            }
-        });
+        newsViewModel.listPostMutableLiveData.observe(getActivity(),
+                new Observer<List<NewHeadLines>>() {
+                    @Override
+                    public void onChanged(List<NewHeadLines> headLines) {
+                        recycleAdapter.setList(headLines);
+                    }
+                });
 
         return view;
     }

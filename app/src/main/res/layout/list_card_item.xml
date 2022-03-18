@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="180dp"
-    android:layout_margin="16dp">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardBackgroundColor="@color/grey">
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/card_image"
-            android:scaleType="centerCrop"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:contentDescription="@string/cardImage" />
-    <TextView
-        android:padding="4dp"
-        android:id="@+id/first_card_text"
-        style="@style/TextAppearance.AppCompat.Title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|start|bottom"
-        android:fontFamily="monospace" />
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/main_card_image" />
+        <TextView
+            android:id="@+id/first_card_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/card_image"
+            android:textColor="@color/yellow"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:maxLines="2"
+            android:layout_margin="4dp"/>
+        <TextView
+            android:id="@+id/second_card_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/first_card_text"
+            android:textColor="@color/yellow"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:padding="4dp"
+            android:maxLines="3"
+            android:layout_margin="4dp"/>
+    </RelativeLayout>
 
-    <TextView
-        android:padding="4dp"
-        android:id="@+id/second_card_text"
-        style="@style/TextAppearance.AppCompat.Title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical|end|bottom"
-        android:fontFamily="monospace"
-        android:textColor="#000" />
-    </FrameLayout>
 </androidx.cardview.widget.CardView>

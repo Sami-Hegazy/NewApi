@@ -18,8 +18,8 @@ public class NewsViewModel extends ViewModel {
     public MutableLiveData<List<NewHeadLines>> listPostMutableLiveData = new MutableLiveData<>();
     MutableLiveData<String> posts = new MutableLiveData<>();
 
-    public void getPosts(){
-        FetchNews.getINSTANCE().getPosts().enqueue(new Callback<NewsApiResponse>() {
+    public void getPostsByCat(String cat){
+        FetchNews.getINSTANCE().getPostsByCat(cat).enqueue(new Callback<NewsApiResponse>() {
             @Override
             public void onResponse(Call<NewsApiResponse> call, Response<NewsApiResponse> response) {
                 listPostMutableLiveData.setValue(response.body().getArticles());
@@ -31,5 +31,4 @@ public class NewsViewModel extends ViewModel {
             }
         });
     }
-
 }

@@ -4,12 +4,9 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
-
 import com.example.task2.R;
 import com.example.task2.data.models.NewHeadLines;
 import com.example.task2.ui.view.adapters.FragmentAdapter;
@@ -19,6 +16,7 @@ import com.example.task2.utilities.MockUps;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -28,12 +26,12 @@ public class MainActivity extends AppCompatActivity {
     private TopViewPagerAdapter topViewPagerAdapter;
     private final Handler handler = new Handler();
     private ViewPager2 topViewPager;
+    private List<NewHeadLines> imageList = new ArrayList<>();
     private int currentPage = 0;
     private Timer timer = new Timer(); ;
     private final long DELAY_MS = 500;//delay in milliseconds before task is to be executed
     private final long PERIOD_MS = 3000; // time in milliseconds between successive task executions.
-
-    TabLayout mainTab;
+    private TabLayout mainTab;
 
 
     private void viewInit() {
@@ -67,18 +65,12 @@ public class MainActivity extends AppCompatActivity {
         viewInit();
 
         NewsViewModel newsViewModel = new ViewModelProvider(this).get(NewsViewModel.class);
-        newsViewModel.getPosts();
-
-        newsViewModel.listPostMutableLiveData.observe(this, new Observer<List<NewHeadLines>>() {
-            @Override
-            public void onChanged(List<NewHeadLines> list) {
-                topViewPagerAdapter.setList(list);
-            }
-        });
+        newsViewModel.getPostsByCat("general");
+        newsViewModel.listPostMutableLiveData.observe(this, list -> topViewPagerAdapter.setList(list));
 
         /*After setting the adapter use the timer */
         final Runnable Update = () -> {
-            if (currentPage == 3) {
+            if (currentPage == imageList.size()) {
                 currentPage = 0;
             }
             topViewPager.setCurrentItem(currentPage++, true);
@@ -91,9 +83,6 @@ public class MainActivity extends AppCompatActivity {
                 handler.post(Update);
             }
         }, DELAY_MS, PERIOD_MS);
-
-
-
 
     }
 

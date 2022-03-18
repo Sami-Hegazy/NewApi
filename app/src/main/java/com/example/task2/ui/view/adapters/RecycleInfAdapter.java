@@ -37,7 +37,6 @@ public class RecycleInfAdapter extends RecyclerView.Adapter<RecycleInfAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.cardImage.setImageResource(R.drawable.ic_alert);
         holder.firstCardText.setText(headLines.get(position).getSource().getName());
         holder.secondCardText.setText(headLines.get(position).getAuthor());
         if (headLines.get(position).getUrlToImage() != null){

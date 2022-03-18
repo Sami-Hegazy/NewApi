@@ -8,6 +8,9 @@
         <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/drawable-v24/image_three.xml" value="0.1425" />
         <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/drawable-v24/image_two.xml" value="0.1425" />
         <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/drawable/ic_alert.xml" value="0.1425" />
+        <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/drawable/ic_favorite.xml" value="0.111" />
+        <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.111" />
+        <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/drawable/ic_shuttle.xml" value="0.111" />
         <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/drawable/tab_indicator_default.xml" value="0.1425" />
         <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/drawable/tab_indicator_selected.xml" value="0.1425" />
         <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/drawable/tab_selector.xml" value="0.1425" />
@@ -15,11 +18,14 @@
         <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/layout/activity_details.xml" value="0.20416666666666666" />
         <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/layout/activity_save.xml" value="0.20416666666666666" />
+        <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/layout/categories_rv_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/layout/fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/layout/fragment_first.xml" value="0.20416666666666666" />
         <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/layout/fragment_second.xml" value="0.20416666666666666" />
         <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/layout/fragment_third.xml" value="0.20416666666666666" />
         <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/layout/image_holder.xml" value="0.20416666666666666" />
         <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/layout/list_card_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/FF/Android_Udacity/Android_Projects/Task2/app/src/main/res/layout/news_rv_item.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

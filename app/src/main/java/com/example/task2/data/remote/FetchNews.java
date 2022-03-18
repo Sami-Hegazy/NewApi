@@ -25,7 +25,11 @@ public class FetchNews {
         return INSTANCE;
     }
 
-    public Call<NewsApiResponse> getPosts(){
-        return apiInterface.getPost();
+//    public Call<NewsApiResponse> getPosts(){
+//        return apiInterface.getPost();
+//    }
+
+    public Call<NewsApiResponse> getPostsByCat(String cat){
+        return apiInterface.getPostByCategory(cat);
     }
 }

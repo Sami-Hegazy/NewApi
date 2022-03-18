@@ -35,22 +35,23 @@ public class SecondFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_first, container, false);
+        View view = inflater.inflate(R.layout.fragment, container, false);
 
         NewsViewModel newsViewModel = new ViewModelProvider(getActivity()).get(NewsViewModel.class);
-        newsViewModel.getPosts();
+        newsViewModel.getPostsByCat("science");
 
         recyclerView = view.findViewById(R.id.recycler_view);
         RecycleInfAdapter recycleAdapter = new RecycleInfAdapter(getContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(recycleAdapter);
 
-        newsViewModel.listPostMutableLiveData.observe(getActivity(), new Observer<List<NewHeadLines>>() {
-            @Override
-            public void onChanged(List<NewHeadLines> list) {
-                recycleAdapter.setList(list);
-            }
-        });
+        newsViewModel.listPostMutableLiveData.observe(getActivity(),
+                new Observer<List<NewHeadLines>>() {
+                    @Override
+                    public void onChanged(List<NewHeadLines> list) {
+                        recycleAdapter.setList(list);
+                    }
+                });
 
         return view;
     }
